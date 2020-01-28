@@ -10,7 +10,7 @@ export default class ContactPreview extends Component {
                 <Link to={`/contact/${contact._id}`}>
                     <li>
                         <h2>{contact.name}</h2>
-                        <img alt="contact" src={`https://robohash.org/${contact.name}.png?set=set4`}></img>
+                        <img className="contact-img" alt="contact" src={`https://robohash.org/${contact.name}.png?set=set4`}></img>
                         <p>{contact.email}</p>
                         <p>{contact.phone}</p>
                     </li>

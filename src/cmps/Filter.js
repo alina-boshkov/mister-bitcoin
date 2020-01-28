@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 export default class Filter extends Component {
     state = {
         filterBy: {
-            name: '',
-            phone: ''
+            term: ''
         }
     }
     onChangeInput = (ev) => {
@@ -19,11 +18,9 @@ export default class Filter extends Component {
 
     render() {
         return <div>
-            <input type="text" placeholder="Name" value={this.state.filterBy.name}
-                onChange={this.onChangeInput} name="name" />
-            <input type="text" placeholder="Phone" value={this.state.filterBy.phone}
-                onChange={this.onChangeInput} name="phone" />
-            <button type="primary search-btn" onClick={this.onFilter}>Search</button>
+            <input type="text" placeholder="Name/Phone" value={this.state.filterBy.term}
+                onChange={this.onChangeInput} name="term" />
+            <button className="btn" type="primary search-btn" onClick={this.onFilter}>Search</button>
         </div>
     }
 }

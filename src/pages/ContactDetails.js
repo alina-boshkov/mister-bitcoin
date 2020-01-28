@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContactService from '../services/ContactService.js'
+import { Link } from 'react-router-dom';
 
 export default class ContactDetails extends Component {
 
@@ -27,6 +28,11 @@ export default class ContactDetails extends Component {
         }
     }
 
+    onDelete = async () => {
+        await ContactService.deleteContact
+        this.props.history.push('/contact')
+    }
+
     goBack = () => {
         this.props.history.push('/contact')
     }
@@ -40,7 +46,10 @@ export default class ContactDetails extends Component {
                 <img alt="contact" src={`https://robohash.org/${contact.name}.png?set=set4`}></img>
                 <p>{contact.email}</p>
                 <p>{contact.phone}</p>
+                <button onClick={this.onDelete}>Delete</button>
                 <button onClick={this.goBack}>BACK</button>
+                <Link to={`/contact/${contact._id}/edit`}><button>Edit</button>
+                </Link>
             </div>
         )
     }

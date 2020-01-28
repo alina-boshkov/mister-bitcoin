@@ -1,0 +1,153 @@
+@import "../setup/_mixins.scss";
+@import "../setup/_variables.scss";
+
+// Font Sizes
+.fs12 {
+  font-size: rem(12px);
+}
+.fs14 {
+  font-size: rem(14px);
+}
+.fs18 {
+  font-size: rem(18px);
+}
+.fs20 {
+  font-size: rem(20px);
+}
+.fs24 {
+  font-size: rem(24px);
+}
+.fs28 {
+  font-size: rem(28px);
+}
+.fs30 {
+  font-size: rem(30px);
+}
+
+// flex helpers
+
+.flex {
+  display: flex;
+
+  > *.full {
+    flex: 1;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.align-center {
+    align-items: center;
+  }
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.space-evenly {
+    justify-content: space-evenly;
+  }
+  &.space-around {
+    justify-content: space-around;
+  }
+  &.flex-end {
+    justify-content: flex-end;
+  }
+  &.align-end{
+    align-items: flex-end;
+  }
+  &.align-self-end{
+    align-self: flex-end
+  }
+}
+
+.absolute{
+position: absolute;
+}
+
+.totally-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.pointer {
+  cursor: pointer;
+}
+// Media helpers
+
+// .square-ratio {
+//     @include aspect-ratio(1, 1);
+// }
+
+//radio-helpers
+
+#OwnedGames,
+#Dashboard {
+  display: none;
+}
+
+//search helpers
+
+.input {
+  color: black;
+  font-size: 1rem;
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  min-height: 40px;
+  background-color: $clr2;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+}
+
+.clean-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.hidden {
+  display: none;
+}
+
+.modal {
+  z-index: 500;
+  position: fixed;
+  height: 90%;
+  max-height: 100%;
+  width: 350px;
+  max-width: 100%;
+  background-color: #1f2335c7;
+  top: 59px;
+  right: 0;
+  @include for-normal-layout {
+    height: 50%;
+  }
+}
+
+.modal-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  @include for-normal-layout {
+    padding: 15px
+  }
+}
